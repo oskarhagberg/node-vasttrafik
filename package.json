@@ -14,7 +14,7 @@
     "vasttrafik",
     "travel"
   ],
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "http://github.com/oskarhagberg/node-vasttrafik",
   "repository": {
     "type": "git",
@@ -34,7 +34,7 @@
     "test": "node test.js"
   },
   "engines": {
-    "node": "~v0.4.11"
+    "node": "v0.4.x"
   },
   "dependencies": {
     "libxml-to-js": "~0.3.7"
