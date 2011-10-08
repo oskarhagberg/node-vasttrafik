@@ -1,0 +1,7 @@
+# OS X Noice
+.DS_Store
+
+# Node.js modules
+node_modules
+
+npm-debug.log

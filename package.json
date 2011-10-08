@@ -1,0 +1,43 @@
+{
+  "author": "Oskar Hagberg (http://oskarhagberg.com)",
+  "name": "vasttrafik-legacy",
+  "description": "Vasttrafik Webservice API wrapper for Node.js.",
+  "keywords": [
+    "gothenburg",
+    "gbg",
+    "vasttrafik",
+    "travel"
+  ],
+  "tags": [
+    "gothenburg",
+    "gbg",
+    "vasttrafik",
+    "travel"
+  ],
+  "version": "0.1.0",
+  "homepage": "http://github.com/oskarhagberg/node-vasttrafik",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/oskarhagberg/node-vasttrafik.git"
+  },
+  "bugs": {
+    "url": "https://github.com/oskarhagberg/node-vasttrafik/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/oskarhagberg/node-vasttrafik/raw/master/LICENSE"
+    }
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "engines": {
+    "node": "~v0.4.11"
+  },
+  "dependencies": {
+    "libxml-to-js": "~0.3.7"
+  },
+  "devDependencies": {}
+}
