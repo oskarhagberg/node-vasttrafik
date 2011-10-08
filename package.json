@@ -1,6 +1,6 @@
 {
   "author": "Oskar Hagberg (http://oskarhagberg.com)",
-  "name": "vasttrafik-legacy",
+  "name": "vasttrafik",
   "description": "Vasttrafik Webservice API wrapper for Node.js.",
   "keywords": [
     "gothenburg",
