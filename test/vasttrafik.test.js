@@ -13,7 +13,8 @@ function ok(test) {
 function TestSuite() {
   
   var Tests = {
-    "Location": {}
+    "Location": {},
+    "Trip": {}
   };
   
   Tests.Location.getName = function() {
@@ -40,9 +41,43 @@ function TestSuite() {
         if(error) {
           reportError(test, error.message);
         } else {
-          console.log(result.LocationList.StopLocation);
+          // console.log(result.LocationList.StopLocation);
           assert.ok(result);
           assert.ok(result.LocationList);
+          ok(test);
+        }
+      });
+    } catch(e) {
+      reportError(e);
+    }
+  }
+  
+  Tests.Trip.getTrip = function() {
+    var test = "vasttrafik.Trip.getTrip()";
+    try{
+      
+      var origin = {
+          lat: 57.720084
+        , lng: 11.944586
+        , name: 'start'
+      };
+      
+      var destination = {
+          lat: 57.70714
+        , lng: 11.96882
+        , name: 'stop'  
+      }
+      
+      var params = {
+        needGeo = 1
+      }
+      
+      vasttrafik.Trip.getTrip(origin, destination, params, function(error, result){
+        if(error) {
+          reportError(test, error.message);
+        } else {
+          console.log(result);
+          assert.ok(result);
           ok(test);
         }
       });
