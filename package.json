@@ -14,7 +14,7 @@
     "vasttrafik",
     "travel"
   ],
-  "version": "0.1.4",
+  "version": "0.1.5",
   "homepage": "http://github.com/oskarhagberg/node-vasttrafik",
   "repository": {
     "type": "git",

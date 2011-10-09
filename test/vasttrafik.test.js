@@ -14,7 +14,8 @@ function TestSuite() {
   
   var Tests = {
     "Location": {},
-    "Trip": {}
+    "Trip": {},
+    "StationBoard": {}
   };
   
   Tests.Location.getName = function() {
@@ -52,32 +53,100 @@ function TestSuite() {
     }
   }
   
-  Tests.Trip.getTrip = function() {
-    var test = "vasttrafik.Trip.getTrip()";
+  Tests.Trip.getTripByCoord = function() {
+    var test = "vasttrafik.Trip.getTripByCoord()";
     try{
       
       var origin = {
-          lat: 57.720084
-        , lng: 11.944586
+          lat: 57.69633
+        , lng: 11.98773
         , name: 'start'
       };
       
       var destination = {
-          lat: 57.70714
-        , lng: 11.96882
+          lat: 57.65814
+        , lng: 12.01278
         , name: 'stop'  
       }
       
       var params = {
-        needGeo = 1
+        needGeo : 1
       }
       
       vasttrafik.Trip.getTrip(origin, destination, params, function(error, result){
         if(error) {
           reportError(test, error.message);
         } else {
+          assert.ok(result);
+          assert.ok(result.TripList);
+          assert.ok(result.TripList.Trip.length > 0)
+          ok(test);
+        }
+      });
+    } catch(e) {
+      reportError(e);
+    }
+  }
+  
+  Tests.Trip.getTripById = function() {
+    var test = "vasttrafik.Trip.getTripById()";
+    try{
+      
+      var origin = "9022014007520001";
+      var dest = "9022014001760005";
+      var params = {};
+      vasttrafik.Trip.getTrip(origin, dest, params, function(error, result){
+        if(error) {
+          reportError(test, error.message);
+        } else {
+          assert.ok(result);
+          assert.ok(result.TripList);
+          assert.ok(result.TripList.Trip.length > 0)
+          ok(test);
+        }
+      });
+    } catch(e) {
+      reportError(e);
+    }
+  }
+  
+  Tests.StationBoard.getArrivals = function() {
+    var test = "vasttrafik.StationBoard.getArrivals()";
+    try{
+      
+      var id = "9022014007520001";
+      var dir = "9022014001760005";
+      var params = {};
+      vasttrafik.StationBoard.getArrivals(id, dir, new Date(), params, function(error, result){
+        if(error) {
+          reportError(test, error.message);
+        } else {
+          assert.ok(result);
+          assert.ok(result.ArrivalBoard);
+          assert.ok(result.ArrivalBoard.Arrival);
+          ok(test);
+        }
+      });
+    } catch(e) {
+      reportError(e);
+    }
+  }
+  
+  Tests.StationBoard.getDepartures = function() {
+    var test = "vasttrafik.StationBoard.getDepartures()";
+    try{
+      
+      var id = "9022014007520001";
+      var dir = "9022014001760005";
+      var params = {};
+      vasttrafik.StationBoard.getDepartures(id, dir, new Date(), params, function(error, result){
+        if(error) {
+          reportError(test, error.message);
+        } else {
           console.log(result);
           assert.ok(result);
+          assert.ok(result.DepartureBoard);
+          assert.ok(result.DepartureBoard.Departure);
           ok(test);
         }
       });
